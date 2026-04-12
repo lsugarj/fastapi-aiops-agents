@@ -1,0 +1,27 @@
+[app]
+name = "fastapi-aiops-agents"
+env = "dev"
+host = "127.0.0.1"
+port = 8888
+
+[opentelemetry]
+otel_exporter_endpoint="http://localhost:4317"
+
+[logging]
+dir = "logs"
+level = "INFO"
+max_bytes = "50MB" # 如10KB / 50MB / 1GB
+backup_count = 30 # 保留最近30个日志文件
+
+[llm]
+deepseek_api_key="sk-111"
+deepseek_base_url="https://api.deepseek.com"
+deepseek_default_model="deepseek/deepseek-chat"
+openai_api_key="111"
+anthropic_api_key="111"
+agent_max_iterations=5
+agent_temperature=0.3
+
+[kubernetes]
+kubeconfig_path="~/.kube/config"
+kubernetes_context="default"
