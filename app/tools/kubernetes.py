@@ -17,7 +17,7 @@ class K8sTools:
         try:
             config.load_kube_config(
                 config_file=kubernetes_config.kubeconfig_path,
-                context=kubernetes_config.kubernetes_config
+                context=kubernetes_config.kubernetes_context
             )
             self.core_v1 = client.CoreV1Api()
             self.apps_v1 = client.AppsV1Api()
